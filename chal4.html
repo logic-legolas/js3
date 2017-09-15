@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input id="input"><button onclick="stringCombos()"></button>
+    <div class="container">
+
+    </div>
+    <script type="text/javascript">
+      function stringCombos() {
+
+        var storage = new Set([]);
+        var div = document.getElementById('contianer')
+        var input = document.getElementById('input').value;
+        for(var x=0; x<input.length;  x++){
+          for(var z=0; z<input.length; z++){
+            storage.add(input.slice(x , z+1))
+          }
+        }
+        storage.delete("")
+        Array.from(storage);
+        for (var b = 0; b<storage.length; b++){
+          div.appendChild(`<p>${storage[b]}</p>`)
+        }
+      }
+    </script>
+  </body>
+</html>
