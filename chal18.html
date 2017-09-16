@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      let numbers = [64,1038,2,207,19];
+      console.log(numbers);
+      function sorter() {
+        for (var x = 0; x<numbers.length;x++){
+          for (var i = 0; i < numbers.length; i++) {
+            if (numbers[x]>numbers[i+1]){
+              var n = numbers[i]
+              numbers[i]=numbers[i+1]
+              numbers[i+1]= n;
+            }
+            console.log(numbers);
+          }
+        }
+      }
+      
+      sorter();
+    </script>
+  </body>
+</html>
