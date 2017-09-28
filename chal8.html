@@ -18,9 +18,8 @@
         for (var i = 0; i < word.length; i++) {
           for (var x = 0; x < letters.length; x++) {
             if (word.charAt(i)===letters.charAt(x)){
-              currentLetter = letters.charAt(x);
               check.push(word.charAt(i))
-              letters.replace(letters.charAt(x), "");
+              letters = setCharAt(letters,x,"")
               console.log(letters)
               break;
             }
@@ -38,6 +37,10 @@
         if(number === word.length){
           document.getElementById('storage').innerHTML = "Valid";
         }
+      }
+      function setCharAt(str,index,chr) {
+        if(index > str.length-1) return str;
+        return str.substr(0,index) + chr + str.substr(index+1);
       }
     </script>
   </body>
