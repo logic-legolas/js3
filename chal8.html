@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    Letters: <input id = "characters"><br>
+    Word: <input id = 'word'><br>
+    <button onclick="start()"></button>
+    <p id = "storage"></p>
+    <script type="text/javascript">
+      function start(){
+        var currentLetter;
+        var letters = document.getElementById("characters").value
+        var word = document.getElementById("word").value
+        var check = [];
+        for (var i = 0; i < word.length; i++) {
+          for (var x = 0; x < letters.length; x++) {
+            if (word.charAt(i)===letters.charAt(x)){
+              check.push(word.charAt(i))
+              letters = setCharAt(letters,x,"")
+              console.log(letters)
+              break;
+            }
+          }
+        }
+        var number = 0;
+        for (var i = 0; i < word.length; i++) {
+          if(word.charAt(i) !== check[i]){
+            document.getElementById('storage').innerHTML = "Invalid";
+            break;
+          }else{
+            number = number+1;
+          }
+        }
+        if(number === word.length){
+          document.getElementById('storage').innerHTML = "Valid";
+        }
+      }
+      function setCharAt(str,index,chr) {
+        if(index > str.length-1) return str;
+        return str.substr(0,index) + chr + str.substr(index+1);
+      }
+    </script>
+  </body>
+</html>
