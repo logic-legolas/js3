@@ -11,6 +11,7 @@
         var smallest = array[0];
         var largest = array[0];
         var sum = 0;
+        var average = 0;
         for (var x = 0; x < array.length; x++) {
           if (smallest>array[x]) {
             smallest = array[x];
@@ -19,7 +20,7 @@
             largest = array[x];
           }
           sum+=array[x];
-          var average = sum/array.length
+          average = sum/array.length
         }
         if(typeof sum ==="number"&&typeof smallest ==="number"&&typeof largest ==="number"){
           stats.push(smallest,average,largest,sum);
