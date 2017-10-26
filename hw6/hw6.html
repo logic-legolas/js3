@@ -5,14 +5,26 @@
   </head>
   <body>
     Pokemon Name: <input id = "pokename"><br>
-    Pokemon Name: <input id = "pokeid"><br>
-    Pokemon Name: <input id = "poketype">
+    Pokemon ID: <input id = "pokeid" type = "number"><br>
+    Pokemon Type: <input id = "poketype"><br>
+    <button>Make the Table</button>
+    <table border = "5px black">
+      <tr id ="id"><td>IDs</td></tr>
+      <tr id = "name"><td>Names</td></tr>
+      <tr id = "type"><td>Types</td></tr>
+    </table>
     <script type="text/javascript">
       var table = {
-        "1":{"name":"Bulbasaur","Type":["Grass","Poison"]}
+        /*"1":{"name":"Bulbasaur","Type":["Grass","Poison"]}
         "1":{"name":"Charmander","Type":"Fire"}
-        "1":{"name":"Squirtle","Type":"Water"}
+        "1":{"name":"Squirtle","Type":"Water"}*/
       }
+      document.getElementById('id')
+      $("button").click(()=>{
+        $("#id").append(`<td>${document.getElementById('pokeid').value}</td>`);
+        $("#name").append(`<td>${document.getElementById('pokename').value}</td>`);
+        $("#type").append(`<td>${document.getElementById('poketype').value}</td>`);
+      });
     </script>
   </body>
 </html>
