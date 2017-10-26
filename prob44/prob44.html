@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      const calculate=(array)=> {
+        var stats=[];
+        var smallest = array[0];
+        var largest = array[0];
+        var sum = 0;
+        var average = 0;
+        for (var x = 0; x < array.length; x++) {
+          if (smallest>array[x]) {
+            smallest = array[x];
+          }
+          if (largest<array[x]) {
+            largest = array[x];
+          }
+          sum+=array[x];
+          average = sum/array.length
+        }
+        if(typeof sum ==="number"&&typeof smallest ==="number"&&typeof largest ==="number"){
+          stats.push(smallest,average,largest,sum);
+        }
+        console.log(stats);
+        return stats
+      }
+      var array = [1,2,3,4,5,6];
+      calculate(array);
+    </script>
+  </body>
+</html>
