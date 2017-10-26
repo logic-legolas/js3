@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      let numbers = [Math.random(),Math.random(),Math.random(),Math.random(),Math.random()];
+      console.log(numbers);
+      function sorter() {
+        for (var foo = 0; foo < numbers.length; foo++) {
+          for (var i = 0; i < numbers.length; i++) {
+            if (numbers[i]>numbers[i+1]){
+              var n = numbers[i+1];
+              numbers[i+1]=numbers[i];
+              numbers[i]= n;
+            }
+          }
+        }
+        console.log(numbers);
+        alert(numbers);
+        }
+      sorter();
+    </script>
+  </body>
+</html>
