@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input id = "input"><button onclick ="start()">Check</button>
+    <script type="text/javascript">
+      function start() {
+        var input =  document.getElementById("input").value;
+        var values = input.split("")
+        var ifIntOrFloat = Number.isInteger(values.length/2);
+        for (var i = 0; i < values.length; i++) {
+          var valueIsInt = Number.isInteger(i/2);
+          if(ifIntOrFloat === true){
+            if(valueIsInt===false){
+              values[i]= values[i]*2
+              if(values[i]>9){
+                values[i] = values[i]-9
+              }
+            }else{
+              values[i] = parseInt(values[i])
+            }
+          }else if(ifIntOrFloat === false){
+            if(valueIsInt===true){
+              values[i]= values[i]*2
+              if(values[i]>9){
+                values[i] = values[i]-9
+              }
+            }else{
+              values[i] = parseInt(values[i])
+            }
+          }
+        }
+        console.log(values);
+        var total = 0;
+        for (var i = 0; i < values.length; i++) {
+          total = total+values[i]
+        }
+        var isValid = Number.isInteger(total/10);
+        console.log(isValid);
+        if (isValid === true){
+          alert("That credit card number is valid!")
+        }else{
+          alert("That credit card number is invalid!")
+        }
+      }
+    </script>
+  </body>
+</html>
